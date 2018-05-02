@@ -72,7 +72,7 @@ int main() {
     while (window.pollEvent(event))
     {
         //Check the type of the event...
-        switch (event.key)
+        switch (event.type)
         {
                 //Window closed
             case sf::Event::Closed:
