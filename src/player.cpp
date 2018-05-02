@@ -17,7 +17,7 @@ private:
     char m;
 
 public:
-    void jwalkerMove(int x, int y, char m); {
+    void jwalkerMove(int x, int y, char m) {
 
         /* -------------------Start of old code we may want to keep
         //Move using ASWD and HJKL
@@ -42,7 +42,7 @@ public:
             default:
                 break;
                 --------------------end of old code we may want to keep*/
-
+                return m;
 
         }
     }
