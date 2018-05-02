@@ -12,7 +12,7 @@ private:
     int x, y;
     int pos;
     int length;
-    const int height;
+    int height;
     int velocity;
     char m;
 
@@ -42,10 +42,9 @@ public:
             default:
                 break;
                 --------------------end of old code we may want to keep*/
-                return m;
+                m+=1;
 
         }
-    }
 };
 
 class Jwalker {
