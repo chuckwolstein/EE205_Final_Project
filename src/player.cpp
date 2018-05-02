@@ -1,4 +1,3 @@
-/*
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
@@ -7,109 +6,86 @@
 #define SAFE 1
 #define UNSAFE 0
 
-//using namespace std; //Standard
-using namespace sf;  //SFML
+int main()
+{
+	sf::RenderWindow window(sf::VideoMode(1060, 795), "													J-Walker!!!");
 
-class GameObject {
-private:
-    int x, y;
-    int pos;
-    int length;
-    int height;
-    int velocity;
-    char m;
+	sf::RectangleShape jwalker;
 
-public:
-    void jwalkerMove(int x, int y, char m) {
+	jwalker.setSize(sf::Vector2f(80, 80));
+	jwalker.setFillColor(sf::Color::Yellow);
+	jwalker.setPosition(sf::Vector2f(jwalker.getPosition().x, window.getSize().y - jwalker.getSize().y));
 
-        /* -------------------Start of old code we may want to keep
-        //Move using ASWD and HJKL
-        switch(m) {
-            case 'a' : //Move left
-            case 'h' :
-                x = x - 1;
-                break;
-            case 's' : //Move down
-            case 'j' :
-                y = y - 1;
-                break;
-            case 'w' : //Move up
-            case 'k':
-                y = y + 1;
-                break;
-            case 'd' : //Move right
-            case 'l' :
-                x = x + 1;
-                break;
+	sf::RectangleShape car;
 
-            default:
-                break;
-                --------------------end of old code we may want to keep
-                m+=1;
+	car.setSize(sf::Vector2f(120, 60));
+	car.setFillColor(sf::Color::Blue);
+	car.setPosition(sf::Vector2f(car.getPosition().x, window.getSize().y / 2 - car.getSize().y));
 
-        }
-};
+	while (window.isOpen())
+	{
+		// handle events
+		sf::Event event;
 
-class Jwalker {
-private:
-    int x, y;
-    int length;
-    int lives;
-    int score;
+		while (window.pollEvent(event))
+		{
+			switch (event.type)
+			{
+			case sf::Event::KeyReleased:
+				//Move Left
+				if (sf::Keyboard::Left == event.key.code)
+				{
+					jwalker.move(-80, 0);
+				}
+				//Move Right
+				else if (sf::Keyboard::Right == event.key.code)
+				{
+					jwalker.move(80, 0);
+				}
+				//Move Up
+				else if (sf::Keyboard::Up == event.key.code)
+				{
+					jwalker.move(0, -80);
+				}
+				//Move Down
+				else if (sf::Keyboard::Down == event.key.code)
+				{
+					jwalker.move(0, 80);
+				}
+				//Escape using ESC key
+				else if (sf::Keyboard::Escape == event.key.code)
+				{
+					window.close();
+				}
+				//Pause the screen
+				else if (sf::Keyboard::Space == event.key.code)
+				{
 
-public:
-    void jwalkerMove();
-};
+				}
+			}
+		}
 
-int main() {
-    GameObject object;
-    Jwalker jwalker;
+		// update
+		car.move(0.2, 0);
 
-    sf::Window window;
+		if (car.getPosition().x > window.getSize().x)
+		{
+			car.setPosition(sf::Vector2f(-car.getSize().x, window.getSize().y / 2 - car.getSize().y));
+		}
 
-    sf::Event::KeyEvent event;
+		if (jwalker.getGlobalBounds().intersects(car.getGlobalBounds()))
+		{
+			window.close();
+		}
 
-    while (window.isOpen())	{
-  		// handle events
-  		sf::Event event;
-    //While there are pending events...
-      while (window.pollEvent(event))
-      {
-        //Check the type of the event...
-        switch (event.key) {
-                //Window closed
-            case sf::Event::Closed:
-                window.close();
-                break;
+		window.clear();
 
-                //Key pressed
-            case sf::Event::KeyPressed:
-                if (event.key.code == sf::Keyboard::Escape) {
-                  //Quit
-                }
-                else if (event.key.code == sf::Keyboard::Space) {
-                  //Pause and Unpause
-                }
-                else if (event.key.code == sf::Keyboard::Left) {
-                  //Move Left
-                }
-                else if (event.key.code == sf::Keyboard::Right) {
-                  //Move Right
-                }
-                else if (event.key.code == sf::Keyboard::Up) {
-                  //Move Up
-                }
-                else if (event.key.code == sf::Keyboard::Down) {
-                    //Move down
-                }
-        }
-                break;
+		// draw SFML content
+		window.draw(jwalker);
+		window.draw(car);
 
+		window.display();
+	}
 
-                //We don't process other types of events
-            default:
-                break;
-      }
-  }
-    }
+	return EXIT_SUCCESS;
 }
