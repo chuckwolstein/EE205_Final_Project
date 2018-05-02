@@ -68,12 +68,14 @@ int main() {
 
     sf::Event::KeyEvent event;
 
+    while (window.isOpen())	{
+  		// handle events
+  		sf::Event event;
     //While there are pending events...
-    while (window.pollEvent(event))
-    {
+      while (window.pollEvent(event))
+      {
         //Check the type of the event...
-        switch (event.type)
-        {
+        switch (event.key) {
                 //Window closed
             case sf::Event::Closed:
                 window.close();
@@ -99,13 +101,14 @@ int main() {
                 else if (event.key.code == sf::Keyboard::Down) {
                     //Move down
                 }
-    }
+        }
                 break;
 
 
                 //We don't process other types of events
             default:
                 break;
-        }
+      }
+  }
     }
 }
