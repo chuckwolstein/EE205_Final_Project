@@ -11,12 +11,15 @@ class GameObject {
 private:
     int x, y;
     int pos;
-    int length, const height;
+    int length;
+    const int height;
     int velocity;
     char m;
 
 public:
-    void jwalkerMove(int x, int y, char m) {
+    void jwalkerMove(int x, int y, char m); {
+
+        /* -------------------Start of old code we may want to keep
         //Move using ASWD and HJKL
         switch(m) {
             case 'a' : //Move left
@@ -38,6 +41,7 @@ public:
 
             default:
                 break;
+                --------------------end of old code we may want to keep*/
 
 
         }
@@ -46,6 +50,8 @@ public:
 
 class Jwalker {
 private:
+    int x, y;
+    int length;
     int lives;
     int score;
 
@@ -74,8 +80,27 @@ int main() {
 
                 //Key pressed
             case sf::Event::KeyPressed:
-                ...
+                if (event.key.code == sf::Keyboard::Escape) {
+                  //Quit
+                }
+                else if (event.key.code == sf::Keyboard::Space) {
+                  //Pause and Unpause
+                }
+                else if (event.key.code == sf::Keyboard::Left) {
+                  //Move Left
+                }
+                else if (event.key.code == sf::Keyboard::Right) {
+                  //Move Right
+                }
+                else if (event.key.code == sf::Keyboard::Up) {
+                  //Move Up
+                }
+                else if (event.key.code == sf::Keyboard::Down) {
+                    //Move down
+                }
+    }
                 break;
+
 
                 //We don't process other types of events
             default:
