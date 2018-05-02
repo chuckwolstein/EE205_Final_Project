@@ -1,3 +1,4 @@
+/*
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
@@ -43,7 +44,7 @@ public:
 
             default:
                 break;
-                --------------------end of old code we may want to keep*/
+                --------------------end of old code we may want to keep
                 m+=1;
 
         }
