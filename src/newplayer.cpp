@@ -8,7 +8,8 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(800, 600), "J-Walker!!!");
+	sf::RenderWindow window(sf::VideoMode(1200, 900), "
+															J-Walker!!!");
 
 	sf::RectangleShape jwalker;
 
@@ -60,7 +61,7 @@ int main()
 				//Pause the screen
 				else if (sf::Keyboard::Space == event.key.code)
 				{
-					
+
 				}
 		}
 
