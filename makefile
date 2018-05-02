@@ -20,10 +20,10 @@ all: ./bin/main.out
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	g++ $(INCLUDE_DIRS) $(CPPFLAGS) $(CXXFLAGS) -c -o  $@ $<
 
-./bin/main.out: $(OBJ_FILES) ./tst/main.cpp ./include/*.hpp
+./bin/main.out: $(OBJ_FILES) ./src/main.cpp ./include/*.hpp
 	g++ $(CPPFLAGS) $(CXXFLAGS) $(INCLUDE_DIRS) \
 		-o ./bin/main.out \
-		./tst/main.cpp $(OBJ_FILES)
+		./src/main.cpp $(OBJ_FILES)
 	./bin/main.out
 
 # Convenience rules for the command line to quickly test a class
