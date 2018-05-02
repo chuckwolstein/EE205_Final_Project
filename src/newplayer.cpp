@@ -13,14 +13,14 @@ int main()
 	sf::CircleShape jwalker;
 
 	jwalker.setRadius(40);
-	jwalker.setFillColor(sf::Color::Tan);
+	jwalker.setFillColor(sf::Color::Yellow);
 	jwalker.setPosition(sf::Vector2f(jwalker.getPosition().x, window.getSize().y - jwalker.getSize().y));
 
 
 	sf::RectangleShape car;
 
 	car.setSize(sf::Vector2f(120, 60));
-	car.setFillColor(sf::Color::Red);
+	car.setFillColor(sf::Color::Blue);
 	car.setPosition(sf::Vector2f(car.getPosition().x, window.getSize().y / 2 - car.getSize().y));
 
 	while (window.isOpen())
