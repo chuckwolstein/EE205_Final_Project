@@ -12,7 +12,7 @@ int main()
 
 	sf::CircleShape jwalker;
 
-	jwalker.setSize(sf::Vector2f(80, 80));
+	jwalker.setRadius(40);
 	jwalker.setFillColor(sf::Color::Tan);
 	jwalker.setPosition(sf::Vector2f(jwalker.getPosition().x, window.getSize().y - jwalker.getSize().y));
 
