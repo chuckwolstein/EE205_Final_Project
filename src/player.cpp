@@ -1,6 +1,5 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "object.hpp"
 
 #define SAFE 1
 #define UNSAFE 0
