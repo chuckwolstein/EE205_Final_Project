@@ -33,19 +33,19 @@ int main()
 			{
 			case sf::Event::KeyReleased:
 
-				if (sf::Keyboard::Key::Left == event.key.code)
+				if (sf::Keyboard::Left == event.key.code)
 				{
 					jwalker.move(-80, 0);
 				}
-				else if (sf::Keyboard::Key::Right == event.key.code)
+				else if (sf::Keyboard::Right == event.key.code)
 				{
 					jwalker.move(80, 0);
 				}
-				else if (sf::Keyboard::Key::Up == event.key.code)
+				else if (sf::Keyboard::Up == event.key.code)
 				{
 					jwalker.move(0, -80);
 				}
-				else if (sf::Keyboard::Key::Down == event.key.code)
+				else if (sf::Keyboard::Down == event.key.code)
 				{
 					jwalker.move(0, 80);
 				}
