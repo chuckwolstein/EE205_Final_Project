@@ -12,10 +12,9 @@ int main()
 
 	sf::CircleShape jwalker;
 
-	jwalker.setRadius(40);
+	jwalker.setSize(sf::Vector2f(80, 80));
 	jwalker.setFillColor(sf::Color::Yellow);
-	jwalker.setPosition(sf::Vector2f(jwalker.getPosition().x, window.getSize().y - (2 * jwalker.getRadius().y)));
-
+	jwalker.setPosition(sf::Vector2f(jwalker.getPosition().x, window.getSize().y - jwalker.getSize().y));
 
 	sf::RectangleShape car;
 
