@@ -32,24 +32,36 @@ int main()
 			switch (event.type)
 			{
 			case sf::Event::KeyReleased:
-
+				//Move Left
 				if (sf::Keyboard::Left == event.key.code)
 				{
 					jwalker.move(-80, 0);
 				}
+				//Move Right
 				else if (sf::Keyboard::Right == event.key.code)
 				{
 					jwalker.move(80, 0);
 				}
+				//Move Up
 				else if (sf::Keyboard::Up == event.key.code)
 				{
 					jwalker.move(0, -80);
 				}
+				//Move Down
 				else if (sf::Keyboard::Down == event.key.code)
 				{
 					jwalker.move(0, 80);
 				}
-			}
+				//Escape using ESC key
+				else if (sf::Keyboard::Escape == event.key.code)
+				{
+					window.close();
+				}
+				//Pause the screen
+				else if (sf::Keyboard::Space == event.key.code)
+				{
+					
+				}
 		}
 
 		// update
