@@ -10,9 +10,10 @@ int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1060, 795), "													J-Walker!!!");
 
-	sf::RectangleShape jwalker;
+	sf::CircleShape jwalker;
 
 	jwalker.setSize(sf::Vector2f(80, 80));
+	jwalker.setFillColor(sf::Color::Tan);
 	jwalker.setPosition(sf::Vector2f(jwalker.getPosition().x, window.getSize().y - jwalker.getSize().y));
 
 
