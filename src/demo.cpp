@@ -8,7 +8,7 @@
 #define NUM_LANES 6
 #define NUM_ENEMIES 4
 #define GAME_HEIGHT 1000
-#define GAME_WIDTH 800
+#define GAME_WIDTH 1800
 #define CELL_HEIGHT 50
 #define CELL_WIDTH 50
 
@@ -44,7 +44,7 @@ class Enemy_Lane : public Enemy {
 Enemy::Enemy(){
   setPosition(0,0);
   setSize(sf::Vector2f(CELL_WIDTH, CELL_HEIGHT));
-  speed = 2;
+  speed = 1;
   direction_right = true;
 }
 
@@ -52,7 +52,7 @@ Enemy::Enemy(int pos_x, int pos_y){
   setPosition(pos_x, pos_y);
   setSize(sf::Vector2f(CELL_WIDTH, CELL_HEIGHT));
   setFillColor(sf::Color::White);
-  speed = 2;
+  speed = 1;
   direction_right = true;
 }
 
@@ -103,7 +103,7 @@ Enemy_Lane::Enemy_Lane(int Ypos, int num_enemies, bool direction){
   current_direction_right = direction;
   std::cout <<current_direction_right <<std::endl;
   int min_speed = 1;
-  int range = 2;
+  int range = 5;
   int rand_speed = min_speed + (rand() % range);
   if (current_direction_right){
     int Xpos = 90;
@@ -158,19 +158,31 @@ int main()
 	jwalker.setPosition(sf::Vector2f(jwalker.getPosition().x, window.getSize().y - jwalker.getSize().y));
 	sf::FloatRect windowBounds(sf::Vector2f(0.f, 0.f), window.getDefaultView().getSize());
 
-	Enemy_Lane lane1(0, NUM_ENEMIES, true);
-  Enemy_Lane lane2(50, NUM_ENEMIES,false);
-  Enemy_Lane lane3(100, NUM_ENEMIES,true);
-  Enemy_Lane lane4(150, NUM_ENEMIES, false);
-  Enemy_Lane lane5(200, NUM_ENEMIES,true);
-  Enemy_Lane lane6(250, NUM_ENEMIES,false);
-	Enemy_Lane lane7(300, NUM_ENEMIES,true);
-	Enemy_Lane lane8(350, NUM_ENEMIES,false);
-	Enemy_Lane lane9(400, NUM_ENEMIES,true);
-	Enemy_Lane lane10(450, NUM_ENEMIES,false);
-	Enemy_Lane lane11(500, NUM_ENEMIES,true);
-	Enemy_Lane lane12(550, NUM_ENEMIES,false);
-	Enemy_Lane lane13(600, NUM_ENEMIES,true);
+	Enemy_Lane lane1(0, NUM_ENEMIES,rand()%2);
+  Enemy_Lane lane2(50, NUM_ENEMIES,rand()%2);
+  Enemy_Lane lane3(100, NUM_ENEMIES,rand()%2);
+  Enemy_Lane lane4(150, NUM_ENEMIES,rand()%2);
+  Enemy_Lane lane5(200, NUM_ENEMIES,rand()%2);
+  Enemy_Lane lane6(250, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane7(300, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane8(350, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane9(400, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane10(450, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane11(500, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane12(550, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane13(600, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane14(650, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane15(700, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane16(750, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane17(800, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane18(850, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane19(900, NUM_ENEMIES,rand()%2);
+	Enemy_Lane lane20(950, NUM_ENEMIES,false);
+
+
+
+
+
 
 	while (window.isOpen())
 	{
@@ -226,7 +238,14 @@ for(int i = 0; i<lane1.enemies.size();++i){
 			(jwalker.getGlobalBounds().intersects(lane10.enemies[i].getGlobalBounds())) ||
 			(jwalker.getGlobalBounds().intersects(lane11.enemies[i].getGlobalBounds())) ||
 			(jwalker.getGlobalBounds().intersects(lane12.enemies[i].getGlobalBounds())) ||
-			(jwalker.getGlobalBounds().intersects(lane13.enemies[i].getGlobalBounds()))){
+			(jwalker.getGlobalBounds().intersects(lane13.enemies[i].getGlobalBounds())) ||
+			(jwalker.getGlobalBounds().intersects(lane14.enemies[i].getGlobalBounds())) ||
+			(jwalker.getGlobalBounds().intersects(lane15.enemies[i].getGlobalBounds())) ||
+			(jwalker.getGlobalBounds().intersects(lane16.enemies[i].getGlobalBounds())) ||
+			(jwalker.getGlobalBounds().intersects(lane17.enemies[i].getGlobalBounds())) ||
+			(jwalker.getGlobalBounds().intersects(lane18.enemies[i].getGlobalBounds())) ||
+			(jwalker.getGlobalBounds().intersects(lane19.enemies[i].getGlobalBounds())) ||
+			(jwalker.getGlobalBounds().intersects(lane20.enemies[i].getGlobalBounds()))){
 		window.close();
 		}
 }
@@ -246,6 +265,14 @@ lane6.refresh();
 		lane11.refresh();
 		lane12.refresh();
 		lane13.refresh();
+		lane14.refresh();
+		lane15.refresh();
+		lane16.refresh();
+		lane17.refresh();
+		lane18.refresh();
+		lane19.refresh();
+		lane20.refresh();
+
 		window.draw(jwalker);
 		for(int i = 0; i<lane1.enemies.size();++i){
 			window.draw(lane1.enemies[i]);
@@ -261,7 +288,14 @@ lane6.refresh();
 			window.draw(lane11.enemies[i]);
 			window.draw(lane12.enemies[i]);
 			window.draw(lane13.enemies[i]);
-		}
+			window.draw(lane14.enemies[i]);
+			window.draw(lane15.enemies[i]);
+			window.draw(lane16.enemies[i]);
+			window.draw(lane17.enemies[i]);
+			window.draw(lane18.enemies[i]);
+			window.draw(lane19.enemies[i]);
+			window.draw(lane20.enemies[i]);
+			}
 		window.display();
 	}
 
