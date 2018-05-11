@@ -3,7 +3,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
-#include <Text.hpp>
 #include <iostream>
 #include <sstream>
 #include <fstream>
