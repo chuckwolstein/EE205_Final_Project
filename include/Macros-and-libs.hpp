@@ -1,3 +1,5 @@
+#pragma once
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
@@ -5,10 +7,6 @@
 #include <sstream>
 #include <fstream>
 #include <string>
-#include "../include/enemy.hpp"
-#include "../include/Macros-and-libs.hpp"
-
-#pragma once
 
 
 #define GAME_HEIGHT 700

@@ -1,5 +1,8 @@
+#pragma once
+
 #include <SFML/Graphics.hpp>
 #include "../include/Macros-and-libs.hpp"
+
 
 //enemy class for game
 class Enemy : public sf::RectangleShape {

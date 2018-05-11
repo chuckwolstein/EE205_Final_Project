@@ -1,3 +1,6 @@
+#include "../include/enemy.hpp"
+#include "../include/Macros-and-libs.hpp"
+
 int main()
 {
   //open file to display best time
