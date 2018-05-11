@@ -13,9 +13,9 @@ INCLUDE_DIRS := -I./media/ -I./include/
 SRC_FILES := $(wildcard $(SRC_DIR)/*.cpp)
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC_FILES))
 
-linux:	linuxPre linuxPost runExecutable
+linux:	linuxPre linuxPost removeObject runExecutable
 
-mac:	macOneStep runExecutable
+mac:	macOneStep removeObject runExecutable
 
 linuxPre:	$(OBJ_FILES) ./src/main.cpp ./include/*.hpp
 		g++ $(CPPFLAGS) $(CXXFLAGS) $(INCLUDE_DIRS) ./src/main.cpp
@@ -26,10 +26,13 @@ linuxPost:
 
 
 macOneStep: $(OBJ_FILES) ./src/main.cpp ./include/*.hpp
-	g++ $(MAC_SFML_FLAGS1) $(MAC_SFML_FLAGS2)	main.cpp -o ./bin/TrafficDodger
+	g++ $(MAC_SFML_FLAGS1) $(MAC_SFML_FLAGS2)	./src/main.cpp -o ./bin/TrafficDodger
 
 runExecutable:
 	./bin/TrafficDodger
+
+removeObject:
+	rm ./*.o
 
 clean:
 	rm ./src/*.o
