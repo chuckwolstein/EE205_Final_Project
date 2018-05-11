@@ -64,7 +64,7 @@ Enemy_Lane::Enemy_Lane(int Ypos, int num_enemies, bool direction){
   //generate random speed for lane
   current_direction_right = direction;
   int min_speed = 1;
-  int range = 5;
+  int range = MAX_SPEED;
   int rand_speed = min_speed + (rand() % range);
   /*for a lane with direction right, create enemies randomly spaced apart,
   and add them the vector for the lane, each lane will have static speed
