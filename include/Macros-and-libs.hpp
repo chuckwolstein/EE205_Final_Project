@@ -7,6 +7,7 @@
 #include <sstream>
 #include <fstream>
 #include <string>
+#include <ctime>
 
 
 #define GAME_HEIGHT 700
@@ -14,3 +15,4 @@
 #define NUM_ENEMIES 4
 #define CELL_HEIGHT 50
 #define CELL_WIDTH 50
+#define MAX_SPEED 3

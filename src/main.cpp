@@ -2,6 +2,10 @@
 #include "../include/Macros-and-libs.hpp"
 
 int main() {
+  
+  // Seed the RNG once, at the start of the program
+     srand( time( NULL ) );
+
   //open file to display best time
   std::ifstream myfile;
   myfile.open ("../src/time.txt");
