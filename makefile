@@ -22,7 +22,7 @@ linuxPre:	$(OBJ_FILES) ./src/*.cpp ./include/*.hpp
 
 
 linuxPost:
-	g++ ./src/main.o -o ./bin/TrafficDodger $(LINUX_SFML_FLAGS)
+	g++ ./src/*.o -o ./bin/TrafficDodger $(LINUX_SFML_FLAGS)
 
 
 macOneStep: $(OBJ_FILES) ./src/main.cpp ./include/*.hpp
