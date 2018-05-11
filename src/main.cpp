@@ -2,7 +2,7 @@
 #include "../include/Macros-and-libs.hpp"
 
 int main() {
-  
+
   // Seed the RNG once, at the start of the program
      srand( time( NULL ) );
 
@@ -43,7 +43,7 @@ int main() {
 
   const int NUM_LANES = GAME_HEIGHT / CELL_HEIGHT;
 	sf::RenderWindow window(sf::VideoMode(GAME_WIDTH, GAME_HEIGHT), ""
-    "                       Traffic Dodger!!!");
+    "\t\t\t\t\tTraffic Dodger!!!");
 	window.setVerticalSyncEnabled(true);
 	sf::RectangleShape jwalker;
 
