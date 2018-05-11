@@ -11,7 +11,10 @@ int main() {
   //load font and set up text to display time
   sf::Text text;
   sf::Font font;
-  font.loadFromFile("Sansation-Regular.ttf");
+  if (!font.loadFromFile("Sansation-Regular.ttf"))
+        {
+            //Nothing goes here...?
+        }
   text.setFont(font);
   text.setPosition((GAME_WIDTH)/4,0);
   text.setCharacterSize(34);
