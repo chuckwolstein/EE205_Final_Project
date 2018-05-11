@@ -43,7 +43,7 @@ int main() {
 
   const int NUM_LANES = GAME_HEIGHT / CELL_HEIGHT;
 	sf::RenderWindow window(sf::VideoMode(GAME_WIDTH, GAME_HEIGHT), ""
-    "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTraffic Dodger!!!");
+    "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTraffic Dodger!!!");
 	window.setVerticalSyncEnabled(true);
 	sf::RectangleShape jwalker;
 
