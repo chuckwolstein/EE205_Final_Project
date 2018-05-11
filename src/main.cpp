@@ -12,7 +12,7 @@ int main()
   //load font and set up text to display time
   sf::Text text;
   sf::Font font;
-  font.loadFromFile("./sansation.ttf");
+  font.loadFromFile("../src/sansation.ttf");
   text.setFont(font);
   text.setPosition((GAME_WIDTH)/4,0);
   text.setCharacterSize(34);
@@ -36,7 +36,8 @@ int main()
   float t1, t2;
 
   const int NUM_LANES = GAME_HEIGHT / CELL_HEIGHT;
-	sf::RenderWindow window(sf::VideoMode(GAME_WIDTH, GAME_HEIGHT), "Traffic Dodger!!!");
+	sf::RenderWindow window(sf::VideoMode(GAME_WIDTH, GAME_HEIGHT), ""
+    "                       Traffic Dodger!!!");
 	window.setVerticalSyncEnabled(true);
 	sf::RectangleShape jwalker;
 
