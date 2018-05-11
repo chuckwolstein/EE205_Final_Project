@@ -36,4 +36,4 @@ removeObject:
 
 clean:
 	rm ./src/*.o
-	rm ./bin/*.out ./bin/TrafficDodger
+	rm ./bin/TrafficDodger
