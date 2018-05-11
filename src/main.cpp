@@ -5,7 +5,7 @@
 #include <sstream>
 #include <fstream>
 #include <string>
-#include <SFML/Graphics.hpp>
+#include "enemy.hpp"
 
 #define GAME_HEIGHT 700
 #define GAME_WIDTH 1200
