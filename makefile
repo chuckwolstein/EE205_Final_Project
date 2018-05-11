@@ -25,8 +25,8 @@ linuxPost:
 	g++ ./src/*.o -o ./bin/TrafficDodger $(LINUX_SFML_FLAGS)
 
 
-macOneStep: $(OBJ_FILES) ./src/main.cpp ./include/*.hpp
-	g++ $(MAC_SFML_FLAGS1) $(MAC_SFML_FLAGS2)	./src/main.cpp -o ./bin/TrafficDodger
+macOneStep: $(OBJ_FILES) ./src/*.cpp ./include/*.hpp
+	g++ $(MAC_SFML_FLAGS1) $(MAC_SFML_FLAGS2)	./src/*.cpp -o ./bin/TrafficDodger
 
 runExecutable:
 	./bin/TrafficDodger
