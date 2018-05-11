@@ -1,18 +1,17 @@
 #include "../include/enemy.hpp"
 #include "../include/Macros-and-libs.hpp"
 
-int main()
-{
+int main() {
   //open file to display best time
   std::ifstream myfile;
-  myfile.open ("time.txt");
+  myfile.open ("../src/time.txt");
   std::string line;
   getline(myfile,line);
 
   //load font and set up text to display time
   sf::Text text;
   sf::Font font;
-  font.loadFromFile("../src/sansation.ttf");
+  font.loadFromFile("../src/Sansation-Regular.ttf");
   text.setFont(font);
   text.setPosition((GAME_WIDTH)/4,0);
   text.setCharacterSize(34);
