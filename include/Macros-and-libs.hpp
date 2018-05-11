@@ -15,4 +15,4 @@
 #define NUM_ENEMIES 4
 #define CELL_HEIGHT 50
 #define CELL_WIDTH 50
-#define MAX_SPEED 2
+#define MAX_SPEED 20
