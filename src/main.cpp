@@ -45,11 +45,11 @@ int main() {
 	sf::RenderWindow window(sf::VideoMode(GAME_WIDTH, GAME_HEIGHT), ""
     "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTraffic Dodger!!!");
 	window.setVerticalSyncEnabled(true);
-	sf::RectangleShape jwalker;
+	sf::RectangleShape hero;
 
-	jwalker.setSize(sf::Vector2f(CELL_WIDTH, CELL_HEIGHT));
-	jwalker.setFillColor(sf::Color::Yellow);
-	jwalker.setPosition(sf::Vector2f(jwalker.getPosition().x + (GAME_WIDTH/2), window.getSize().y - jwalker.getSize().y));
+	hero.setSize(sf::Vector2f(CELL_WIDTH, CELL_HEIGHT));
+	hero.setFillColor(sf::Color::Yellow);
+	hero.setPosition(sf::Vector2f(hero.getPosition().x + (GAME_WIDTH/2), window.getSize().y - hero.getSize().y));
 	sf::FloatRect windowBounds(sf::Vector2f(0.f, 0.f), window.getDefaultView().getSize());
   int px = CELL_HEIGHT;
   Enemy_Lane Lanes[NUM_LANES];
@@ -69,20 +69,20 @@ int main() {
 		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
-							jwalker.move(0, -50);
+							hero.move(0, -50);
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 			{
-							jwalker.move(0, 50);
+							hero.move(0, 50);
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 			{
-							jwalker.move(-50, 0);
+							hero.move(-50, 0);
 			}
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 			{
-							jwalker.move(50, 0);
+							hero.move(50, 0);
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) || sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
 			{
@@ -92,19 +92,19 @@ int main() {
 
 		}
 //set walker bounds
-		sf::Vector2f position = jwalker.getPosition();
+		sf::Vector2f position = hero.getPosition();
 		position.y = std::max(position.y, windowBounds.top+CELL_HEIGHT);
-		position.y = std::min(position.y, windowBounds.top + windowBounds.height - jwalker.getSize().y);
+		position.y = std::min(position.y, windowBounds.top + windowBounds.height - hero.getSize().y);
 		position.x = std::max(position.x, windowBounds.left);
-		position.x = std::min(position.x, windowBounds.left + windowBounds.width - jwalker.getSize().x);
-		jwalker.setPosition(position);
+		position.x = std::min(position.x, windowBounds.left + windowBounds.width - hero.getSize().x);
+		hero.setPosition(position);
 
 //detect collisions
     for(int i = 0; i < NUM_LANES; ++i){
       Enemy_Lane check;
       for(int i2 = 0; i2 < NUM_ENEMIES; ++i2){
         check = Lanes[i];
-        if((jwalker.getGlobalBounds().intersects(check.enemies[i2].getGlobalBounds()))){
+        if((hero.getGlobalBounds().intersects(check.enemies[i2].getGlobalBounds()))){
           window.close();
           goto End;
         }
@@ -119,7 +119,7 @@ int main() {
     for(int i = 0; i<NUM_LANES;++i){
       Lanes[i].drawlanes(window);
     }
-  	window.draw(jwalker);
+  	window.draw(hero);
   //draw clock and best time
     elapsed1 = clock.getElapsedTime();
     ss.str(std::string()); //clear the string
