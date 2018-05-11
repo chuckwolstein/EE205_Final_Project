@@ -15,7 +15,7 @@ int main() {
   //load font and set up text to display time
   sf::Text text;
   sf::Font font;
-  if (!font.loadFromFile("../src/Sansation-Regular.ttf"))
+  if (!font.loadFromFile("Sansation-Regular.ttf"))
         {
             //Nothing goes here...?
         }
