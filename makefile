@@ -15,7 +15,7 @@ OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC_FILES))
 
 linux:	linuxPre linuxPost removeObject runExecutable
 
-mac:	macOneStep removeObject runExecutable
+mac:	macOneStep runExecutable
 
 linuxPre:	$(OBJ_FILES) ./src/*.cpp ./include/*.hpp
 		g++ $(CPPFLAGS) $(CXXFLAGS) $(INCLUDE_DIRS) -I./SFML-2.5.0/include ./src/*.cpp
