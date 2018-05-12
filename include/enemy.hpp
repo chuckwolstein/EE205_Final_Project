@@ -4,7 +4,7 @@
 
 
 //enemy class for game
-class Enemy : public sf::RectangleShape {
+class Enemy: public sf::RectangleShape, public sf::Texture {
   public:
     int speed;
     bool direction_right;
@@ -15,6 +15,9 @@ class Enemy : public sf::RectangleShape {
     Enemy(int pos_x, int pos_y);
     virtual void MoveEnemy();
     ~Enemy();
+  private:
+    //declare a texture to use for cars
+    sf::Texture carTexture;
 };
 
 //class to hold a vector of enemies to be drawn to the screen
