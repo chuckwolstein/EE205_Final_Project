@@ -3,6 +3,14 @@
 
 int main() {
 
+  sf::Music music;
+  if(!music.openFromFile("./media/Take.ogg"))
+  {
+    return 0;
+  }
+    music.play();
+  music.setLoop(1);
+
   // Seed the RNG once, at the start of the program
      srand( time( NULL ) );
 
@@ -50,25 +58,6 @@ int main() {
   const int NUM_LANES = GAME_HEIGHT / CELL_HEIGHT;
 	sf::RenderWindow window(sf::VideoMode(GAME_WIDTH, GAME_HEIGHT), "Traffic Dodger!!!");
 	window.setVerticalSyncEnabled(true);
-
-  /*  This code is for a version of SFML that is more advanced than what Chuck has
-
-  sf::Music hardcoremusic;
-          if(!hardcoremusic.openFromFile("./media/Take.ogg"))
-                  return -1;
-          hardcoremusic.play();
-          hardcoremusic.setLoop(1);
-*/
-
-  /*        //for the music soundtrack
-          sf::SoundBuffer musicBuffer;
-          if(!musicBuffer.loadFromFile("./media/Take.ogg"))
-                  return 0;
-          sf::Sound soundOfMusic;
-          soundOfMusic.setBuffer(musicBuffer);
-          soundOfMusic.play();
-          //soundOfMusic.setLoop(1);
-*/
 
   //declare a texture to use for our hero
   sf::Texture heroTexture;
