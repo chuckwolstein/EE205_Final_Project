@@ -106,6 +106,14 @@ int main() {
   sf::Sprite backgroundSprite;
   backgroundSprite.setTexture(background);
 
+  //declare a texture to use for cars
+  sf::Texture carTexture;
+  //check to ensure car texture loads correctly
+  if(!carTexture.loadFromFile("media/car.PNG")) {
+  std::cout << "Failed to load car texture" << std::endl;
+  system("pause");
+  }
+
 	while (window.isOpen()){
     //reset string yourT
     yourT = "Your Time:";
