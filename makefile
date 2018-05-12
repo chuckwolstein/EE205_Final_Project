@@ -18,7 +18,7 @@ linux:	linuxPre linuxPost removeObject runExecutable
 mac:	macOneStep removeObjectMac runExecutable
 
 linuxPre:	$(OBJ_FILES) ./src/*.cpp ./include/*.hpp
-		g++ $(CPPFLAGS) $(CXXFLAGS) $(INCLUDE_DIRS) -I./SFML-2.5.0/include ./src/*.cpp
+		g++ $(CPPFLAGS) $(CXXFLAGS) $(INCLUDE_DIRS) ./src/*.cpp
 
 
 linuxPost:
