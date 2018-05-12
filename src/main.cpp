@@ -23,15 +23,21 @@ int main() {
   text.setFont(font);
   text.setPosition((GAME_WIDTH)/4,0);
   text.setCharacterSize(34);
+/*These next 2 lines are for SFML v2.4.0 or later
   text.setOutlineColor(sf::Color::Red);
-  text.setFillColor(sf::Color::Red);
+  text.setFillColor(sf::Color::Red); */
+/*But Chuck has v 2.3.2, so this next line is for his */
+  text.setColor(sf::Color::Red);
   std::string yourT = "Your Time:";
   sf::Text text2;
   text2.setFont(font);
   text2.setPosition((GAME_WIDTH/4+GAME_WIDTH/4),0);
   text2.setCharacterSize(34);
+/*These next 2 lines are for SFML v2.4.0 or later
   text2.setOutlineColor(sf::Color::Red);
-  text2.setFillColor(sf::Color::Red);
+  text2.setFillColor(sf::Color::Red); */
+/*But Chuck has v 2.3.2, so this next line is for his */
+  text2.setColor(sf::Color::Red);
   std::string best = "Best Time: ";
   best+=line;
   text2.setString(best);
