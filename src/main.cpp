@@ -51,6 +51,24 @@ int main() {
   const int NUM_LANES = GAME_HEIGHT / CELL_HEIGHT;
 	sf::RenderWindow window(sf::VideoMode(GAME_WIDTH, GAME_HEIGHT), "Traffic Dodger!!!");
 	window.setVerticalSyncEnabled(true);
+
+  /*  This code is for a version of SFML that is more advanced than what Chuck has
+
+  sf::Music hardcoremusic;
+          if(!hardcoremusic.openFromFile("./media/Take.ogg"))
+                  return -1;
+          hardcoremusic.play();
+          hardcoremusic.setLoop(1);
+*/
+          //for the music soundtrack
+          sf::SoundBuffer buffer;
+          if(!buffer.loadFromFile("./media/Take.ogg"))
+                  return 0;
+          sf::Sound sound;
+          sound.setBuffer(buffer);
+          sound.play();
+          sound.setLoop(1);
+
 	sf::RectangleShape hero;
 
 	hero.setSize(sf::Vector2f(CELL_WIDTH, CELL_HEIGHT));
