@@ -49,8 +49,7 @@ int main() {
   float t1, t2;
 
   const int NUM_LANES = GAME_HEIGHT / CELL_HEIGHT;
-	sf::RenderWindow window(sf::VideoMode(GAME_WIDTH, GAME_HEIGHT), ""
-    "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTraffic Dodger!!!");
+	sf::RenderWindow window(sf::VideoMode(GAME_WIDTH, GAME_HEIGHT), "Traffic Dodger!!!");
 	window.setVerticalSyncEnabled(true);
 	sf::RectangleShape hero;
 
@@ -66,6 +65,19 @@ int main() {
   }
   //restart clock
   clock.restart();
+
+  //declare a texture to use in our background
+  sf::Texture background;
+  //check to ensure background texture loads correctly
+  if(!background.loadFromFile("../media/Road.PNG")) {
+    std::cout << "Failed to load background" << std::endl;
+    system("pause");
+  }
+
+  //declare a sprite for the background and set its texture
+  sf::Sprite backgroundSprite;
+  backgroundSprite.setTexture(background);
+
 	while (window.isOpen()){
     //reset string yourT
     yourT = "Your Time:";
@@ -118,6 +130,8 @@ int main() {
       }
     }
     window.clear();
+    //draw the background backgroundSprite
+    window.draw(backgroundSprite);
 
 		// draw SFML content
     for(int i = 0; i<NUM_LANES;++i){
@@ -135,7 +149,9 @@ int main() {
     text.setString(yourT);
     to_save = ss.str().c_str();
     window.draw(text);
+      window.draw(backgroundSprite);
     window.draw(text2);
+      window.draw(backgroundSprite);
   	window.display();
   	}
 End:
@@ -145,7 +161,7 @@ End:
     if(myfile.is_open()){
       if(t2>t1){
         myfile.close();
-        std::ofstream myfile2 ("time.txt");
+        std::ofstream myfile2 ("../src/time.txt");
         myfile2 << ss.str().c_str();
         myfile2.close();
       }
