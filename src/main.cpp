@@ -8,7 +8,7 @@ int main() {
 
   //open file to display best time
   std::ifstream myfile;
-  myfile.open ("./src/time.txt");
+  myfile.open ("src/time.txt");
   std::string line;
   getline(myfile,line);
 
@@ -69,7 +69,7 @@ int main() {
   //declare a texture to use in our background
   sf::Texture background;
   //check to ensure background texture loads correctly
-  if(!background.loadFromFile("./media/Road.PNG")) {
+  if(!background.loadFromFile("media/Road.PNG")) {
     std::cout << "Failed to load background" << std::endl;
     system("pause");
   }
@@ -159,7 +159,7 @@ End:
     if(myfile.is_open()){
       if(t2>t1){
         myfile.close();
-        std::ofstream myfile2 ("./src/time.txt");
+        std::ofstream myfile2 ("src/time.txt");
         myfile2 << ss.str().c_str();
         myfile2.close();
       }
