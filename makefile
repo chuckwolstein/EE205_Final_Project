@@ -35,7 +35,7 @@ removeObject:
 	rm ./*.o
 
 removeObjectMac:
-		rm ./src/*.o
+	rm ./src/*.o
 
 clean:
 	rm ./src/*.o
