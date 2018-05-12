@@ -1,6 +1,6 @@
 #include "../include/enemy.hpp"
 
-sf::Texture carTexture;
+//sf::Texture carTexture;
 
 Enemy::Enemy(){
   setPosition(0,0);
@@ -12,14 +12,15 @@ Enemy::Enemy(){
 Enemy::Enemy(int pos_x, int pos_y){
   setPosition(pos_x, pos_y);
   setSize(sf::Vector2f(CELL_WIDTH, CELL_HEIGHT));
+/*
   //declare a texture to use for cars
   //check to ensure car texture loads correctly
   if(!carTexture.loadFromFile("media/car.PNG")) {
   std::cout << "Failed to load car texture" << std::endl;
   system("pause");
-  }
+}*/
   setTexture(&carTexture);
-  setFillColor(sf::Color::White);
+  //setFillColor(sf::Color::White);
   speed = 2;
   direction_right = true;
 }
@@ -105,7 +106,7 @@ Enemy_Lane::Enemy_Lane(int Ypos, int num_enemies, bool direction){
 }
 
 void Enemy_Lane::refresh(){
-  for(int i = 0; i<enemies.size(); ++i){
+  for(unsigned int i = 0; i<enemies.size(); ++i){
     enemies[i].MoveEnemy();
   }
 }
