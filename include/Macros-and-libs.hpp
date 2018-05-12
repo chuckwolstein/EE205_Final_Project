@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/Network.hpp>
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -15,4 +17,4 @@
 #define NUM_ENEMIES 4
 #define CELL_HEIGHT 50
 #define CELL_WIDTH 50
-#define MAX_SPEED 4
+#define MAX_SPEED 15

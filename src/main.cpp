@@ -43,7 +43,6 @@ int main() {
   timeText2.setString(best);
   sf::Clock clock; // start clock
   sf::Time elapsed1; // set object
-  int intSecondsCounted;
   std::stringstream ss;
   std::string to_save;
   float t1, t2;
@@ -60,16 +59,16 @@ int main() {
           hardcoremusic.play();
           hardcoremusic.setLoop(1);
 */
-/*
+
           //for the music soundtrack
-          sf::SoundBuffer buffer;
-          if(!buffer.loadFromFile("./media/Take.ogg"))
+          sf::SoundBuffer musicBuffer;
+          if(!musicBuffer.loadFromFile("./media/Take.ogg"))
                   return 0;
-          sf::Sound sound;
-          sound.setBuffer(buffer);
-          sound.play();
-          sound.setLoop(1);
-          */
+          sf::Sound soundOfMusic;
+          soundOfMusic.setBuffer(musicBuffer);
+          soundOfMusic.play();
+          //soundOfMusic.setLoop(1);
+
 
   //declare a texture to use for our hero
   sf::Texture heroTexture;
@@ -105,14 +104,6 @@ int main() {
   //declare a sprite for the background and set its texture
   sf::Sprite backgroundSprite;
   backgroundSprite.setTexture(background);
-
-  //declare a texture to use for cars
-  sf::Texture carTexture;
-  //check to ensure car texture loads correctly
-  if(!carTexture.loadFromFile("media/car.PNG")) {
-  std::cout << "Failed to load car texture" << std::endl;
-  system("pause");
-  }
 
 	while (window.isOpen()){
     //reset string yourT
