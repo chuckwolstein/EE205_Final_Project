@@ -34,8 +34,8 @@ runExecutable:
 removeObject:
 	rm ./*.o
 
-removeObject:
-		rm ./src/*.o	
+removeObjectMac:
+		rm ./src/*.o
 
 clean:
 	rm ./src/*.o
