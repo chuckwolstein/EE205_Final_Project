@@ -60,7 +60,7 @@ int main() {
           hardcoremusic.setLoop(1);
 */
 
-          //for the music soundtrack
+  /*        //for the music soundtrack
           sf::SoundBuffer musicBuffer;
           if(!musicBuffer.loadFromFile("./media/Take.ogg"))
                   return 0;
@@ -68,7 +68,7 @@ int main() {
           soundOfMusic.setBuffer(musicBuffer);
           soundOfMusic.play();
           //soundOfMusic.setLoop(1);
-
+*/
 
   //declare a texture to use for our hero
   sf::Texture heroTexture;
