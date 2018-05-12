@@ -13,34 +13,34 @@ int main() {
   getline(myfile,line);
 
   //load font and set up text to display time
-  sf::Text text;
+  sf::Text timeText;
   sf::Font font;
   if (!font.loadFromFile("./fonts/Sansation-Regular.ttf"))
         {
             std::cout<<"Unable to load font"<<std::endl;
         }
 
-  text.setFont(font);
-  text.setPosition((GAME_WIDTH)/4,0);
-  text.setCharacterSize(34);
+  timeText.setFont(font);
+  timeText.setPosition((GAME_WIDTH)/4,0);
+  timeText.setCharacterSize(34);
 /*These next 2 lines are for SFML v2.4.0 or later
-  text.setOutlineColor(sf::Color::Red);
-  text.setFillColor(sf::Color::Red); */
+  timeText.setOutlineColor(sf::Color::Red);
+  timeText.setFillColor(sf::Color::Red); */
 /*But Chuck has v 2.3.2, so this next line is for his */
-  text.setColor(sf::Color::Red);
+  timeText.setColor(sf::Color::Red);
   std::string yourT = "Your Time:";
-  sf::Text text2;
-  text2.setFont(font);
-  text2.setPosition((GAME_WIDTH/4+GAME_WIDTH/4),0);
-  text2.setCharacterSize(34);
+  sf::Text timeText2;
+  timeText2.setFont(font);
+  timeText2.setPosition((GAME_WIDTH/4+GAME_WIDTH/4),0);
+  timeText2.setCharacterSize(34);
 /*These next 2 lines are for SFML v2.4.0 or later
-  text2.setOutlineColor(sf::Color::Red);
-  text2.setFillColor(sf::Color::Red); */
+  timeText2.setOutlineColor(sf::Color::Red);
+  timeText2.setFillColor(sf::Color::Red); */
 /*But Chuck has v 2.3.2, so this next line is for his */
-  text2.setColor(sf::Color::Red);
+  timeText2.setColor(sf::Color::Red);
   std::string best = "Best Time: ";
   best+=line;
-  text2.setString(best);
+  timeText2.setString(best);
   sf::Clock clock; // start clock
   sf::Time elapsed1; // set object
   int intSecondsCounted;
@@ -166,10 +166,10 @@ int main() {
     ss.str(std::string()); //clear the string
     ss << elapsed1.asSeconds();
     yourT+=ss.str().c_str();
-    text.setString(yourT);
+    timeText.setString(yourT);
     to_save = ss.str().c_str();
-    window.draw(text);
-    window.draw(text2);
+    window.draw(timeText);
+    window.draw(timeText2);
   	window.display();
   	}
 End:
