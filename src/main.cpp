@@ -32,7 +32,7 @@ int main() {
   sf::Text timeText2;
   timeText2.setFont(font);
   timeText2.setPosition((GAME_WIDTH/4+GAME_WIDTH/4),0);
-  timeText2.setCharacterSize(34);
+  timeText2.setCharacterSize(30);
 /*These next 2 lines are for SFML v2.4.0 or later
   timeText2.setOutlineColor(sf::Color::Red);
   timeText2.setFillColor(sf::Color::Red); */
@@ -71,10 +71,18 @@ int main() {
           sound.setLoop(1);
           */
 
+  //declare a texture to use for our hero
+  sf::Texture heroTexture;
+  //check to ensure hero texture loads correctly
+  if(!heroTexture.loadFromFile("media/hero.PNG")) {
+  std::cout << "Failed to load hero texture" << std::endl;
+  system("pause");
+  }
+
 	sf::RectangleShape hero;
 
 	hero.setSize(sf::Vector2f(CELL_WIDTH, CELL_HEIGHT));
-	hero.setFillColor(sf::Color::Yellow);
+  hero.setTexture(&heroTexture);
 	hero.setPosition(sf::Vector2f(hero.getPosition().x + (GAME_WIDTH/2), window.getSize().y - hero.getSize().y));
 	sf::FloatRect windowBounds(sf::Vector2f(0.f, 0.f), window.getDefaultView().getSize());
   int px = CELL_HEIGHT;
