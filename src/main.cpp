@@ -8,14 +8,14 @@ int main() {
 
   //open file to display best time
   std::ifstream myfile;
-  myfile.open ("src/time.txt");
+  myfile.open ("./src/time.txt");
   std::string line;
   getline(myfile,line);
 
   //load font and set up text to display time
   sf::Text text;
   sf::Font font;
-  if (!font.loadFromFile("Sansation-Regular.ttf"))
+  if (!font.loadFromFile("./fonts/Sansation-Regular.ttf"))
         {
             std::cout<<"Unable to load font"<<std::endl;
         }
@@ -60,6 +60,7 @@ int main() {
           hardcoremusic.play();
           hardcoremusic.setLoop(1);
 */
+/*
           //for the music soundtrack
           sf::SoundBuffer buffer;
           if(!buffer.loadFromFile("./media/Take.ogg"))
@@ -68,6 +69,7 @@ int main() {
           sound.setBuffer(buffer);
           sound.play();
           sound.setLoop(1);
+          */
 
 	sf::RectangleShape hero;
 
