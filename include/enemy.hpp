@@ -17,7 +17,7 @@ class Enemy : public sf::RectangleShape {
     ~Enemy();
 };
 
-//class to hold a vector of enemies to be drawn to screen
+//class to hold a vector of enemies to be drawn to the screen
 class Enemy_Lane : public Enemy {
   public:
     bool current_direction_right;
